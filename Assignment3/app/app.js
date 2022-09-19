@@ -1,7 +1,7 @@
 var users = [];
 
 function initListeners() {
-  $("submit").click((e) => {
+  $("#submit").click((e) => {
     e.preventDefault();
     let allUsers = JSON.parse(localStorage.getItem("Person"));
 
@@ -46,7 +46,7 @@ function initListeners() {
     }
   });
 
-  $("#getStudents").click((e) => {
+  $("#getStudent").click((e) => {
     e.preventDefault();
     console.log("hello");
     $("#app").html("");
@@ -54,7 +54,7 @@ function initListeners() {
 
     $.each(allUsers, function (idx, user) {
       console.log(user.fName);
-      $("app").append(
+      $("#app").append(
         `<p>${user.fName} ${user.lName} ${user.Age} ${user.Number} ${user.Email} ${user.Classes}</p>`
       );
     });
@@ -72,9 +72,9 @@ function initSite() {
     //console.log(people);
     if (people) {
       let persons = JSON.parse(localStorage.getItem("Person"));
-      console.log("persons");
+      console.log(persons);
     } else {
-      localStorage.setItem("Person", []);
+      localStorage.setItem("Person", "[]");
       alert("No people added yet");
     }
 
